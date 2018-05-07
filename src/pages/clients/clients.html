@@ -1,0 +1,30 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-buttons start>
+      <button ion-button icon-only menuToggle>
+        <ion-icon name="menu"> </ion-icon>
+      </button>
+    </ion-buttons>
+
+    <ion-title>Clients</ion-title>
+    
+    <ion-buttons end>
+      <button ion-button icon-only (click)="onGoToAddClient()">
+        <ion-icon name="person-add"> </ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+    <ion-list>
+      <ion-item *ngFor="let client of listOfClients; let i = index" 
+      (click)="onLoadClient(client, i)">
+        <h3>{{client.firstName}}</h3>
+      </ion-item>
+    
+    </ion-list>
+</ion-content>

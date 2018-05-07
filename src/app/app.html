@@ -1,0 +1,44 @@
+<ion-menu [content]="nav">
+  <ion-header>
+    <ion-toolbar>
+      <ion-title>DebtBook</ion-title>
+    </ion-toolbar>
+  </ion-header>
+
+  <ion-content>
+    <ion-list>
+      <button ion-item icon-left (click)="onLoad(rootPage)" *ngIf="isAuthenticated" >
+        <ion-icon name="home"></ion-icon>
+        Home
+      </button>
+      <button ion-item icon-left (click)="onLoad(clientsPage)" *ngIf="isAuthenticated">
+        <ion-icon name="people"></ion-icon>
+        Clients
+      </button>
+      <button ion-item icon-left (click)="onLoad(incomingPage)" *ngIf="isAuthenticated">
+        <ion-icon name="trending-up"></ion-icon>
+        Incoming
+      </button>
+      <button ion-item icon-left (click)="onLoad(outgoingPage)" *ngIf="isAuthenticated">
+        <ion-icon name="trending-down"></ion-icon>
+        Outgoing
+      </button>
+      <button ion-item icon-left (click)="onLoad(signinPage)" *ngIf="!isAuthenticated">
+        <ion-icon name="log-in"></ion-icon>
+        SignIn
+      </button>
+      <button ion-item icon-left (click)="onLoad(signupPage)" *ngIf="!isAuthenticated">
+        <ion-icon name="person"></ion-icon>
+        SignUp
+      </button>
+      <button ion-item icon-left  (click)="onSignout()" *ngIf="isAuthenticated">
+        <ion-icon name="log-out"></ion-icon>
+        SignOut
+      </button>
+    </ion-list>
+  </ion-content>
+
+</ion-menu>
+
+<!-- Disable swipe-to-go-back because it's poor UX to combine STGB with side menus -->
+<ion-nav [root]="rootPage" #nav swipeBackEnabled="false"></ion-nav>

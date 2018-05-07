@@ -1,0 +1,33 @@
+<ion-header>
+
+  <ion-navbar>
+    <ion-title>Client Details</ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+<ion-grid>
+  <ion-row>
+    <ion-col text-center>
+      <h2>{{ client.firstName }}</h2>
+      <div class="subtitle">{{ client.lastName }}</div>
+    </ion-col>
+  </ion-row>
+  <ion-row>
+    <ion-col text-center>
+      <p>{{ client.firstName }}</p>
+    </ion-col>
+  </ion-row>
+  
+   <ion-row>
+    <ion-col>
+      <button ion-button outline block (click)="onEditClient()">Edit Client</button>
+    </ion-col>
+    <ion-col>
+      <button ion-button outline block (click)="onDeleteClient()" color="danger">Delete Client</button>
+    </ion-col>
+  </ion-row>
+</ion-grid>
+</ion-content>
